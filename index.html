@@ -1,163 +1,82 @@
+<!doctype html>
 <html>
-
 <head>
-	<link rel="stylesheet" type="text/css" href="~/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Page template By Adobe Dreamweaver CC</title>
+<link href="AboutPageAssets/styles/aboutPageStyle.css" rel="stylesheet" type="text/css">
+
+<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+<script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
 </head>
 
 <body>
-
-	<div class="cd-schedule">
-		<div class="timeline">
-			<ul>
-				<li><span>09:00</span></li>
-				<li><span>09:30</span></li>
-				<!-- additional elements here -->
-			</ul>
-		</div>
-
-		<div class="events">
-			<ul>
-				<li class="events-group">
-					<div class="top-info"><span>Monday</span></div>
-
-					<ul>
-						<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
-							<a href="#0">
-								<em class="event-name">Abs Circuit</em>
-							</a>
-						</li>
-
-						<!-- other events here -->
-					</ul>
-				</li>
-
-				<li class="events-group">
-					<div class="top-info"><span>Tuesday</span></div>
-
-					<ul>
-						<!-- events here -->
-					</ul>
-				</li>
-
-				<!-- additional li.events-group here -->
-			</ul>
-		</div>
-
-		<div class="event-modal">
-			<header class="header">
-				<div class="content">
-					<span class="event-date"></span>
-					<h3 class="event-name"></h3>
-				</div>
-
-				<div class="header-bg"></div>
-			</header>
-
-			<div class="body">
-				<div class="event-info"></div>
-				<div class="body-bg"></div>
-			</div>
-
-			<a href="#0" class="close">Close</a>
-		</div>
-	</div>
-	
-	<script>
-		function SchedulePlan( element ) {
-  this.element = element;
-  this.timeline = this.element.find('.timeline');
-  //...
+<!-- Header content -->
+<header>
+  <div class="profileLogo"> 
+    <!-- Profile logo. Add a img tag in place of <span>. -->
+    <p class="logoPlaceholder"><!-- <img src="logoImage.png" alt="sample logo"> --><span>戦争ゲム日本</span></p>
+  </div>
+  <div class="profilePhoto"> 
+    <!-- Profile photo --> 
+     </div>
+  <!-- Identity details -->
+  <section class="profileHeader">
+    <h1>Wargaming in Japan!</h1>
+    <h3>Organize! Locate! Play!</h3>
+    <hr>
+    <p>This website is designed to allow wargamers in japan to arrange and coordinate gaming days and club events. Please check the calendar below for upcoming events! If you would like to add your event to the calender, please contact us <a href="mailto:duront@gmail.com">here.</p>
+  </section>
+  <!-- Links to Social network accounts -->
+  <aside class="socialNetworkNavBar">
+    <div class="socialNetworkNav"> 
+      <!-- Add a Anchor tag with nested img tag here --> 
+       </div>
+    <div class="socialNetworkNav"> 
+      <!-- Add a Anchor tag with nested img tag here --> 
+    </div>
+    <div class="socialNetworkNav"> 
+      <!-- Add a Anchor tag with nested img tag here --> 
+    </div>
+    <div class="socialNetworkNav"> 
+      <!-- Add a Anchor tag with nested img tag here --> 
+    </div>
+  </aside>
+</header>
+<!-- content -->
+<section class="mainContent"> 
+  <!-- Contact details -->
+  <section class="section1">
+    <h2 class="sectionTitle">Calender of Events!</h2>
+    <hr class="sectionTitleRule">
+    <hr class="sectionTitleRule2">
+    <div class="section1Content">
+      <iframe class="airtable-embed" src="https://airtable.com/embed/shr4q0q4IniKbGK0O?backgroundColor=blue&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+  </section>
+  <!-- Previous experience details -->
+  <section class="section2">
+    <h2 class="sectionTitle">Add your event!</h2>
+    <hr class="sectionTitleRule">
+    <hr class="sectionTitleRule2">
+    <!-- First Title & company details  -->
+    <article class="section2Content">
+      <iframe class="airtable-embed" src="https://airtable.com/embed/shrzKJ7ezJ5MywcOt?backgroundColor=blue" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
+    </article>
   
-  this.eventsWrapper = this.element.find('.events');
-  this.eventsGroup = this.eventsWrapper.find('.events-group');
-  this.singleEvents = this.eventsGroup.find('.single-event');
-  //..
- 
-  this.scheduleReset();
-  this.initEvents();
-}
-		
-		var self = this;
-this.singleEvents.each(function(){
-  //place each event in the grid -> need to set top position and height
-  var start = getScheduleTimestamp($(this).attr('data-start')), //getScheduleTimestamp converts hh:mm to timestamp
-    duration = getScheduleTimestamp($(this).attr('data-end')) - start;
- 
-  var eventTop = self.eventUnitHeight*(start - self.timelineStart)/self.timelineUnitDuration,
-    eventHeight = self.eventUnitHeight*duration/self.timelineUnitDuration;
+    <!-- Replicate the above Div block to add more title and company details --> 
+  </section>
+  <!-- Links to expore your past projects and download your CV -->
+  <aside class="externalResourcesNav">
+    <div class="externalResources"> <a href="#" title="Download CV Link">DOWNLOAD CV</a> </div>
+    <span class="stretch"></span>
+    <div class="externalResources"><a href="#" title="Behance Link">BEHANCE</a> </div>
+    <span class="stretch"></span>
+    <div class="externalResources"><a href="#" title="Github Link">GITHUB</a> </div>
+  </aside>
+</section>
+<footer>
   
-  $(this).css({
-    top: (eventTop -1) +'px',
-    height: (eventHeight+1)+'px'
-  });
-});
-		
-		SchedulePlan.prototype.openModal = function(event) {
-	var self = this;
-	var mq = self.mq();
-	this.animating = true;
- 
-	//update event name and time
-	this.modalHeader.find('.event-name').text(event.find('.event-name').text());
-	this.modalHeader.find('.event-date').text(event.find('.event-date').text());
-	this.modal.attr('data-event', event.parent().attr('data-event'));
- 
-	//update event content
-	this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
-		//once the event content has been loaded
-		self.element.addClass('content-loaded');
-	});
- 
-	this.element.addClass('modal-is-open');
- 
-	if( mq == 'mobile' ) {
-		self.modal.one(transitionEnd, function(){
-			self.modal.off(transitionEnd);
-			self.animating = false;
-		});
-	} else {
-		//change modal height/width and translate it
-		self.modal.css({
-			top: eventTop+'px', //this is the selected event top position
-			left: eventLeft+'px', //this is the selected event left position
-			height: modalHeight+'px', //this is the modal final height
-			width: modalWidth+'px', //this is the modal final width
-		});
-		transformElement(self.modal, 'translateY('+modalTranslateY+'px) translateX('+modalTranslateX+'px)');
- 
-		//set modalHeader width
-		self.modalHeader.css({
-			width: eventWidth+'px',  //this is the selected event width
-		});
-		//set modalBody left margin
-		self.modalBody.css({
-			marginLeft: eventWidth+'px',
-		});
- 
-		//change modalBodyBg height/width and scale it
-		self.modalBodyBg.css({
-			height: eventHeight+'px',
-			width: '1px',
-		});
-		transformElement(self.modalBodyBg, 'scaleY('+HeaderBgScaleY+') scaleX('+BodyBgScaleX+')');
- 
-		//change modal modalHeaderBg height/width and scale it
-		self.modalHeaderBg.css({
-			height: eventHeight+'px',
-			width: eventWidth+'px',
-		});
-		transformElement(self.modalHeaderBg, 'scaleY('+HeaderBgScaleY+')');
-		
-		self.modalHeaderBg.one(transitionEnd, function(){
-			//wait for the  end of the modalHeaderBg transformation and show the modal content
-			self.modalHeaderBg.off(transitionEnd);
-			self.animating = false;
-			self.element.addClass('animation-completed');
-		});
-	}
-};
-	</script>
+</footer>
 </body>
-
-
 </html>
